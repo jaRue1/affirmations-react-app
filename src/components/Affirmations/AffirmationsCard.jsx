@@ -6,6 +6,7 @@ import Media from "react-bootstrap/Media"
 import "./affirmation.css"
 
 function AffirmationsCard({ affirmations }) {
+  let d = new Date(affirmations.created_at._seconds * 1000)
   return (
     <Col md={true}>
       <Card className="affirmation-card"style={{ width: "18rem" }}>
@@ -23,6 +24,7 @@ function AffirmationsCard({ affirmations }) {
               />
             </Media>
           </Card.Text>
+          <Card.Text>{d.toLocaleDateString()}</Card.Text>
         </Card.Body>
       </Card>
     </Col>
