@@ -1,8 +1,9 @@
 import React, { useContext, useEffect} from "react"
 import { AffirmationsContext } from '../../App'
 import AffirmationsCard from "./AffirmationsCard"
-// import CardColumns from "react-bootstrap/CardColumns"
-
+import CardColumns from "react-bootstrap/CardColumns"
+import Row from 'react-bootstrap/Row'
+import Spinner from 'react-bootstrap/Spinner'
 function Affirmations() {
   const { affirmationsList, setAffirmationsList } = useContext(AffirmationsContext)
   useEffect( () => {
@@ -13,14 +14,16 @@ function Affirmations() {
   },[])
 
   return (
-   <>
-   {/* Conditional Rendering  */}
-      {!affirmationsList ? <h2>Loading....</h2> : affirmationsList.map(one =>{
+    <CardColumns>
+      {/* Conditional Rendering  */}
+      <Row>
+      {!affirmationsList ? (<Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>) : affirmationsList.map(one =>{
         return <AffirmationsCard affirmations={one}/>
       })}
-      
-   </>    
-    
+      </Row>
+    </CardColumns>
   )
 }
 export default Affirmations

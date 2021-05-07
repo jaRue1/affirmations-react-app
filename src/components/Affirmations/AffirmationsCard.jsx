@@ -1,15 +1,31 @@
 import React from "react"
-import Card from 'react-bootstrap/Card'
-import Image from 'react-bootstrap/Image'
-function AffirmationsCard({affirmations }) {
+import Card from "react-bootstrap/Card"
+import Image from "react-bootstrap/Image"
+import Col from "react-bootstrap/Col"
+import Media from "react-bootstrap/Media"
+import "./affirmation.css"
+
+function AffirmationsCard({ affirmations }) {
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Body>
-        <Card.Title>{affirmations.text}</Card.Title>
-        <Card.Text>{affirmations.displayName}</Card.Text>
-        <Image src ={affirmations.photoUrl}></Image>
-      </Card.Body>
-    </Card>
+    <Col md={true}>
+      <Card className="affirmation-card"style={{ width: "18rem" }}>
+        <Card.Body>
+          <Card.Title className="text-center">{affirmations.text}</Card.Title>
+          <Card.Text>
+            <Media>
+              <Media.Body><strong>{affirmations.displayName}</strong></Media.Body>
+              <Image
+                roundedCircle
+                width="36"
+                height="36"
+                src={affirmations.photoUrl}
+                alt={affirmations.displayName}
+              />
+            </Media>
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Col>
   )
 }
 export default AffirmationsCard

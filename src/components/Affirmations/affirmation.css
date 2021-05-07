@@ -1,1 +1,11 @@
 /* Affirmation Card styling */
+.card-columns {
+  font-family: 'Calligraffitti', cursive;
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: center;
+}
+.affirmation-card{
+    color: white;
+    background-color: #FFFFFF80;
+}

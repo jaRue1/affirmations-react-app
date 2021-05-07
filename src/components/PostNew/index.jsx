@@ -1,7 +1,7 @@
 import  Modal from 'react-bootstrap/Modal'
 import { UserAuthContext, AffirmationsContext } from '../../App'
 import React, { useState ,useContext } from 'react'
-
+import './styles.css'
 function PostNew(props) {
   const [newText, setNewText ] = useState('')
   const { user } = useContext(UserAuthContext)
@@ -9,9 +9,9 @@ function PostNew(props) {
   const handleSubmit = () => {
     const newAffirmation = { 
       text: newText,
-      uid: user.id,
+      uid: user.uid,
       displayName: user.displayName,
-      photoUrl: user.photoUrl,
+      photoUrl: user.photoURL,
     }
     fetch('https://affirm-api-jj.web.app/affirmations', {
       method:'POST',
@@ -29,19 +29,18 @@ function PostNew(props) {
     .catch(err => console.log(err))
   }
   return(
-    <Modal {...props} size="lg" centered >
+    <Modal {...props} size="lg" centered className="modal">
         <Modal.Header closeButton/>
-        <Modal.Title>Add an Affirmation</Modal.Title>
+        <Modal.Title className="modalTitle">Add an Affirmation</Modal.Title>
         <Modal.Body>
           <textarea 
           value={newText}
           onChange={(e) => setNewText(e.target.value)}
-          placeholder="Your Affirmation Here" rows = "3" cols = "40">
-
-          </textarea>
+          placeholder="Your Affirmation Here" rows = "4" cols = "60">
+         </textarea>
         </Modal.Body>
         <Modal.Footer>
-          <button onClick = {()=> handleSubmit()} > Save </button>
+          <button className="modalButton" onClick = {()=> handleSubmit()} > Save </button>
         </Modal.Footer>
     </Modal>
   )

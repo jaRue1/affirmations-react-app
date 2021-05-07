@@ -1,4 +1,7 @@
 /*  Footer Styles */
 .footer > p {
+  text-align: center;
   font-family: 'Calligraffitti', cursive;
+  color: white;
+
 }
