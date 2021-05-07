@@ -24,6 +24,6 @@ const clickHandler = () => {
   }
 
 }
- return <button onClick = {()=> clickHandler()}>#</button>
+ return <button className='loginButton' onClick = {()=> clickHandler()}>#</button>
 }
 export default LoginButton
