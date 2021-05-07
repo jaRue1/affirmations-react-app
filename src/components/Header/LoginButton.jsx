@@ -32,7 +32,7 @@ function LoginButton() {
     : {}
   return (
     <button className="login-button" onClick={() => clickHandler()}>
-      {user ? "@" : "#"}
+      {user ? "logout" : "login"}
     </button>
   )
 }

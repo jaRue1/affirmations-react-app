@@ -8,27 +8,32 @@
 }
 
 button {
-  width: 36px;
-  height: 36px;
+  width: 60px;
+  height: 25px;
 }
 
 .login-button {
   background: rgba(255, 255, 255, 0.2);
   color: #808080;
   border: 1px solid #808080;
-  border-radius: 50%;
+  border-radius: 2px;
+  padding: .2px;
 }
 .login-button:hover {
-  background: #ff216e;
+  background: lightblue;
   color: white;
   border-color: white;
 }
 
 .add-button {
+  width: 60px;
+  height: 25px;
   background: rgba(255, 255, 255, 0.2);
   color: #808080;
   border: 1px solid #808080;
-  border-radius: 50%;
+  border-radius: 5%;
+  padding: 3px;
+
 }
 .add-button:hover {
   background: #ff9f21;
