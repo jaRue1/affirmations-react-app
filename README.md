@@ -1,3 +1,17 @@
+## To Run App 
+
+cmd: yarn start
+
+## To Deploy 
+ cmd: yarn deploy
+
+## Working Demo 
+https://affirm-app-jj.web.app/
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

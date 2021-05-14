@@ -20,7 +20,10 @@ function LoginButton() {
       firebase
         .auth()
         .signInWithPopup(provider)
-        .then((res) => setUser(res.user))
+        .then((res) => {
+          setUser(res.user)
+        localStorage.setItem("user", JSON.stringify(res.user))
+      })
         .catch((err) => alert(err))
     }
   }
